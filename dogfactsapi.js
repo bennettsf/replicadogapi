@@ -5,17 +5,17 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 
 app.get('/dogfacts', (req, res) => {
-    if ('number' in req.query && req.query.number < data.length) {
+    if ('number' in req.query && req.query.number < data.facts.length) {
         const num = req.query.number
-        const facts = []
+        const factList = {"facts" : []}
         console.log(num)
 
             for (let i = 0; i < num; i++) {
-                facts.push(data[i])
+                factList.facts.push(data.facts[i])
             }
 
             if (num >= 0) {
-                res.send(facts)
+                res.send(factList)
             } else {
                 res.send('Invalid Number Query')
             }
