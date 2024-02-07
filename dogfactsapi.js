@@ -6,8 +6,9 @@ app.set('port', process.env.PORT || 3000);
 
 app.get('/dogfacts', (req, res) => {
     if ('number' in req.query && req.query.number < data.length) {
-        const num = req.query.number < data.length && req.query.number >= 0 ? req.query.number : -1
+        const num = req.query.number
         const facts = []
+        console.log(num)
 
             for (let i = 0; i < num; i++) {
                 facts.push(data[i])
